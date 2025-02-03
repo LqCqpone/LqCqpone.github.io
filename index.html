@@ -8,7 +8,7 @@
         body {
             margin: 0;
             overflow: hidden;
-            background-color: #000;
+            background-color: #111;
             font-family: 'Arial', sans-serif;
             color: #fff;
             display: flex;
@@ -20,227 +20,231 @@
         }
 
         h1 {
-            font-size: 7rem;
-            margin: 0;
+            font-size: 4rem;
             font-family: 'Orbitron', sans-serif;
-            animation: changeText 20s infinite, gradientChange 6s ease-in-out infinite, textGlow 1s ease-in-out infinite alternate, borderRGB 4s ease-in-out infinite;
-            font-weight: bolder;
+            font-weight: bold;
             padding: 20px;
             border-radius: 25px;
-            background: linear-gradient(45deg, #ff6347, #32cd32, #ff4500);
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
             background-size: 200% 200%;
-            background-position: right bottom;
-            color: transparent;
             -webkit-background-clip: text;
-            letter-spacing: 5px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);
-            z-index: 1;
-            user-select: none; /* Previene la selección del texto */
-        }
-
-        @keyframes changeText {
-            0%, 100% {
-                content: 'LqCqpone';
-            }
-            25% {
-                content: 'Kys';
-            }
-            50% {
-                content: 'Spa';
-            }
-            75% {
-                content: '.Kyizl';
-            }
+            color: transparent;
+            animation: gradientChange 6s ease-in-out infinite;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            user-select: none;
         }
 
         @keyframes gradientChange {
-            0% {
-                background-position: right bottom;
-            }
-            50% {
-                background-position: left top;
-            }
-            100% {
-                background-position: right bottom;
-            }
+            0% { background-position: right bottom; }
+            50% { background-position: left top; }
+            100% { background-position: right bottom; }
         }
 
-        @keyframes textGlow {
-            0% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);
-            }
-            100% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.9);
-            }
+        .cps-container {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
         }
 
-        @keyframes borderRGB {
-            0% {
-                border-color: rgb(255, 99, 71);
-            }
-            25% {
-                border-color: rgb(50, 205, 50);
-            }
-            50% {
-                border-color: rgb(255, 69, 0);
-            }
-            75% {
-                border-color: rgb(0, 191, 255);
-            }
-            100% {
-                border-color: rgb(255, 99, 71);
-            }
+        .cps-container:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .cps-counter {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .click-area {
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .click-area:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .discord-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .discord-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-            background-color: #2f3136;
+            padding: 10px 20px;
             border-radius: 15px;
-            padding: 20px;
+            background-color: #2f3136;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: background-color 0.3s ease;
             cursor: pointer;
-            opacity: 0;
-            animation: fadeIn 2s forwards 1s;
-            margin-right: 20px;
-            position: relative;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .discord-container:hover {
             background-color: #7289da;
-        }
-
-        .discord-container span {
-            font-size: 1.8rem;
-            color: #fff;
-            font-weight: bold;
-            margin-left: 15px;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+            transform: scale(1.05);
         }
 
         .discord-logo {
-            width: 70px;
-            height: 70px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            animation: bounce 1s infinite alternate;
         }
 
-        @keyframes bounce {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-10px);
-            }
+        .discord-container span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-left: 10px;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Fondo interactivo */
-        .dynamic-background {
+        .background-effects {
             position: absolute;
-            width: 100%;
-            height: 100%;
             top: 0;
             left: 0;
-            background-color: #000;
-            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
             overflow: hidden;
-            z-index: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        .dynamic-background .line {
+        .particle {
             position: absolute;
-            width: 2px;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.8);
-            animation: pulse 1.5s infinite ease-in-out;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.5);
             border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
         }
 
-        @keyframes pulse {
-            0% {
-                width: 2px;
-                height: 2px;
-            }
-            100% {
-                width: 20px;
-                height: 20px;
-            }
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-80px) translateX(80px); }
+            100% { transform: translateY(0) translateX(0); }
         }
 
-        /* Contenedor de los botones de Discord alineados */
-        .discord-links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .cursor-effect {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+        }
+
+        .gif-container {
             margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .gif-container:hover {
+            transform: scale(1.2);
         }
 
     </style>
 </head>
 <body>
+    <h1 id="text-effect">LqCqpone</h1>
 
-    <!-- Fondo interactivo -->
-    <div class="dynamic-background" id="dynamic-background"></div>
+    <div class="cps-container" onclick="updateCPS()">
+        <div class="cps-counter">CPS: <span id="cps">0</span></div>
+        <div class="click-area">Click Here</div>
+    </div>
 
-    <h1>LqCqpone</h1>
-
-    <!-- Contenedor para los enlaces de Discord alineados horizontalmente -->
     <div class="discord-links">
-        <a href="https://discord.com/users/oujow" target="_blank">
-            <div class="discord-container">
-                <img class="discord-logo" src="https://static.vecteezy.com/system/resources/previews/023/986/880/non_2x/discord-logo-discord-logo-transparent-discord-icon-transparent-free-free-png.png" alt="Discord Logo">
-                <span>oujow</span>
-            </div>
+        <a href="https://discord.com/users/oujow" target="_blank" class="discord-container">
+            <img class="discord-logo" src="https://static.vecteezy.com/system/resources/previews/023/986/880/non_2x/discord-logo-discord-logo-transparent-discord-icon-transparent-free-free-png.png" alt="Discord Logo">
+            <span>oujow</span>
+        </a>
+        <a href="https://discord.com/users/.Kyizl" target="_blank" class="discord-container">
+            <img class="discord-logo" src="https://static.vecteezy.com/system/resources/previews/023/986/880/non_2x/discord-logo-discord-logo-transparent-discord-icon-transparent-free-free-png.png" alt="Discord Logo">
+            <span>.Kyizl</span>
         </a>
 
-        <a href="https://discord.com/users/.Kyizl" target="_blank">
-            <div class="discord-container">
-                <img class="discord-logo" src="https://static.vecteezy.com/system/resources/previews/023/986/880/non_2x/discord-logo-discord-logo-transparent-discord-icon-transparent-free-free-png.png" alt="Discord Logo">
-                <span>.Kyizl</span>
-            </div>
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@vkoe_x7?lang=es" target="_blank" class="discord-container">
+            <img class="discord-logo" src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok Logo" style="width: 40px; height: 40px;">
+            <span>vkoe_x7</span>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@Oujow" target="_blank" class="discord-container">
+            <img class="discord-logo" src="https://cdn.iconscout.com/icon/free/png-256/free-youtube-104-432560.png?f=webp" alt="YouTube Logo" style="width: 40px; height: 40px;">
+            <span>Kys</span>
         </a>
     </div>
 
-    <script>
-        // Crear efectos dinámicos en el fondo
-        const background = document.getElementById('dynamic-background');
-        
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-            const numberOfLines = 10;
-            
-            for (let i = 0; i < numberOfLines; i++) {
-                const line = document.createElement('div');
-                line.classList.add('line');
-                line.style.left = `${x + (Math.random() - 0.5) * 50}px`;
-                line.style.top = `${y + (Math.random() - 0.5) * 50}px`;
-                background.appendChild(line);
+    <div class="background-effects">
+        <!-- Particles will be generated here -->
+    </div>
 
-                // Eliminar la línea después de la animación
-                setTimeout(() => {
-                    line.remove();
-                }, 1500);
+    <div class="cursor-effect" id="cursor"></div>
+
+    <div class="gif-container">
+        <img src="https://media1.tenor.com/m/ioqB2XAdaQgAAAAd/cute-cow.gif" alt="Cute Cow GIF" style="width: 100px;">
+    </div>
+
+    <script>
+        let clicks = 0;
+        let lastTime = 0;
+        let cps = 0;
+        let timeout;
+
+        function updateCPS() {
+            const currentTime = performance.now();
+            clicks++;
+            if (currentTime - lastTime < 1000) {
+                cps = clicks;
+            } else {
+                clicks = 1;
+                lastTime = currentTime;
             }
+            document.getElementById('cps').textContent = cps;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                clicks = 0;
+                document.getElementById('cps').textContent = clicks;
+            }, 1000);
+        }
+
+        // Generate particles
+        const backgroundEffects = document.querySelector('.background-effects');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            backgroundEffects.appendChild(particle);
+        }
+
+        // Cursor effect
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
         });
     </script>
-
 </body>
 </html>
