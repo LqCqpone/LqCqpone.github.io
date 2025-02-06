@@ -162,6 +162,50 @@
             transform: scale(1.2);
         }
 
+        /* Estilos para móviles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+                padding: 10px;
+            }
+
+            .cps-container {
+                font-size: 1.2rem;
+                padding: 20px;
+            }
+
+            .click-area {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+
+            .discord-container {
+                padding: 8px 15px;
+            }
+
+            .discord-container span {
+                font-size: 1rem;
+            }
+
+            .gif-container img {
+                width: 80px;
+            }
+        }
+
+        /* Estilos adicionales para móviles */
+        body.mobile-device {
+            overflow: auto;
+        }
+
+        body.mobile-device .cps-container {
+            width: 90%;
+            margin: 10px auto;
+        }
+
+        body.mobile-device .discord-links {
+            flex-direction: column;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
@@ -245,6 +289,17 @@
             cursor.style.left = `${e.clientX}px`;
             cursor.style.top = `${e.clientY}px`;
         });
+
+        // Detectar si es un dispositivo móvil
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // Aplicar cambios si es un dispositivo móvil
+        if (isMobileDevice()) {
+            document.body.classList.add('mobile-device');
+            console.log("Estás en un dispositivo móvil");
+        }
     </script>
 </body>
 </html>
